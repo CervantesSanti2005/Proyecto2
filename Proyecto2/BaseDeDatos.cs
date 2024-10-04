@@ -2,7 +2,7 @@ using System;
 using System.Data.SQLite;
 
 public class BaseDeDatos{
-    private SQLiteConnection connection;
+    public SQLiteConnection connection { get; private set; }
 
     public void Database(string dbPath){
         connection = new SQLiteConnection($"Data Source={dbPath};Version=3;");
@@ -83,4 +83,34 @@ public class BaseDeDatos{
             command.ExecuteNonQuery();
         }
     }
+    public int GetOrInsertAlbum(string albumName, string path, int year){
+        // Verificar si el álbum ya existe
+        string selectAlbumSql = "SELECT id_album FROM albums WHERE name = @name";
+        using (var command = new SQLiteCommand(selectAlbumSql, connection)){
+            command.Parameters.AddWithValue("@name", albumName);
+            var result = command.ExecuteScalar();
+
+            if (result != null){
+                // Retornar el ID si el álbum ya existe
+                return Convert.ToInt32(result);
+            }else{
+                // Insertar el álbum si no existe
+                string insertAlbumSql = @"
+                    INSERT INTO albums (name, path, year)
+                    VALUES (@name, @path, @year);
+                    SELECT last_insert_rowid();
+                ";
+
+                using (var insertCommand = new SQLiteCommand(insertAlbumSql, connection)){
+                    insertCommand.Parameters.AddWithValue("@name", albumName);
+                    insertCommand.Parameters.AddWithValue("@path", path);
+                    insertCommand.Parameters.AddWithValue("@year", year);
+
+                    // Retornar el ID del nuevo álbum insertado
+                    return Convert.ToInt32(insertCommand.ExecuteScalar());
+                }
+            }
+        }
+    }
+
 }
