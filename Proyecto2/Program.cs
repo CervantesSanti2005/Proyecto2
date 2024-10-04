@@ -17,7 +17,7 @@ namespace BDMusica{
             var minero = new Minero(bd);
 
 
-            string directoryPath = @"Downloads/";  // Cambia esto a la ruta de los archivos MP3
+            string directoryPath = @"/home/santiago/Downloads/";  // Cambia esto a la ruta de los archivos MP3
             Console.WriteLine("Minando archivos en: " + directoryPath);
 
             minero.minarDirectorio(directoryPath);
