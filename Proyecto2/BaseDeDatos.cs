@@ -113,4 +113,36 @@ public class BaseDeDatos{
         }
     }
 
+    public int GetOrInsertPerformer(string performerName){
+
+        string selectPerformerSql = "SELECT id_performer FROM performers WHERE name = @name";
+        using (var command = new SQLiteCommand(selectPerformerSql, connection))
+        {
+            command.Parameters.AddWithValue("@name", performerName);
+            var result = command.ExecuteScalar();
+
+            if (result != null)
+            {
+                // Retornar el ID si el intérprete ya existe
+                return Convert.ToInt32(result);
+            }
+            else
+            {
+                // Insertar el intérprete si no existe
+                string insertPerformerSql = @"
+                    INSERT INTO performers (name, id_type)
+                    VALUES (@name, 2);  -- Tipo 'Unknown' por defecto
+                    SELECT last_insert_rowid();
+                ";
+
+                using (var insertCommand = new SQLiteCommand(insertPerformerSql, connection))
+                {
+                    insertCommand.Parameters.AddWithValue("@name", performerName);
+                    // Retornar el ID del nuevo intérprete insertado
+                    return Convert.ToInt32(insertCommand.ExecuteScalar());
+                }
+            }
+        }
+    }
+
 }
