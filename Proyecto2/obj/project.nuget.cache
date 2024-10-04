@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "DN47hlX0OMY=",
+  "dgSpecHash": "stHYSDya+Ko=",
   "success": true,
   "projectFilePath": "/home/santiago/Desktop/MYD/Proyecto2/Proyecto2/Proyecto2.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/santiago/.nuget/packages/stub.system.data.sqlite.core.netstandard/1.0.118/stub.system.data.sqlite.core.netstandard.1.0.118.nupkg.sha512",
+    "/home/santiago/.nuget/packages/system.data.sqlite.core/1.0.118/system.data.sqlite.core.1.0.118.nupkg.sha512",
+    "/home/santiago/.nuget/packages/taglibsharp/2.3.0/taglibsharp.2.3.0.nupkg.sha512"
+  ],
   "logs": []
 }
