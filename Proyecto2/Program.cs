@@ -23,6 +23,11 @@ namespace BDMusica{
             minero.minarDirectorio(directoryPath);
 
             Console.WriteLine("Listo");
+
+            var busqueda = new Busqueda(bd);
+            Console.WriteLine("Escribe tu búsqueda (ejemplo: t: love a: abba):");
+            string queryUsuario = Console.ReadLine();
+            busqueda.Buscar(queryUsuario);
         }
     }
 }
