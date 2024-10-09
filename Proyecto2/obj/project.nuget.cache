@@ -1,12 +1,60 @@
 {
   "version": 2,
-  "dgSpecHash": "stHYSDya+Ko=",
+  "dgSpecHash": "QhpNoQl9CEk=",
   "success": true,
   "projectFilePath": "/home/santiago/Desktop/MYD/Proyecto2/Proyecto2/Proyecto2.csproj",
   "expectedPackageFiles": [
+    "/home/santiago/.nuget/packages/avalonia/11.0.0/avalonia.11.0.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/avalonia.angle.windows.natives/2.1.0.2023020321/avalonia.angle.windows.natives.2.1.0.2023020321.nupkg.sha512",
+    "/home/santiago/.nuget/packages/avalonia.buildservices/0.0.28/avalonia.buildservices.0.0.28.nupkg.sha512",
+    "/home/santiago/.nuget/packages/avalonia.desktop/11.0.0/avalonia.desktop.11.0.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/avalonia.freedesktop/11.0.0/avalonia.freedesktop.11.0.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/avalonia.native/11.0.0/avalonia.native.11.0.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/avalonia.remote.protocol/11.0.0/avalonia.remote.protocol.11.0.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/avalonia.skia/11.0.0/avalonia.skia.11.0.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/avalonia.win32/11.0.0/avalonia.win32.11.0.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/avalonia.x11/11.0.0/avalonia.x11.11.0.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/harfbuzzsharp/2.8.2.3/harfbuzzsharp.2.8.2.3.nupkg.sha512",
+    "/home/santiago/.nuget/packages/harfbuzzsharp.nativeassets.linux/2.8.2.3/harfbuzzsharp.nativeassets.linux.2.8.2.3.nupkg.sha512",
+    "/home/santiago/.nuget/packages/harfbuzzsharp.nativeassets.macos/2.8.2.3/harfbuzzsharp.nativeassets.macos.2.8.2.3.nupkg.sha512",
+    "/home/santiago/.nuget/packages/harfbuzzsharp.nativeassets.webassembly/2.8.2.3/harfbuzzsharp.nativeassets.webassembly.2.8.2.3.nupkg.sha512",
+    "/home/santiago/.nuget/packages/harfbuzzsharp.nativeassets.win32/2.8.2.3/harfbuzzsharp.nativeassets.win32.2.8.2.3.nupkg.sha512",
+    "/home/santiago/.nuget/packages/microcom.runtime/0.11.0/microcom.runtime.0.11.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/skiasharp/2.88.3/skiasharp.2.88.3.nupkg.sha512",
+    "/home/santiago/.nuget/packages/skiasharp.nativeassets.linux/2.88.3/skiasharp.nativeassets.linux.2.88.3.nupkg.sha512",
+    "/home/santiago/.nuget/packages/skiasharp.nativeassets.macos/2.88.3/skiasharp.nativeassets.macos.2.88.3.nupkg.sha512",
+    "/home/santiago/.nuget/packages/skiasharp.nativeassets.webassembly/2.88.3/skiasharp.nativeassets.webassembly.2.88.3.nupkg.sha512",
+    "/home/santiago/.nuget/packages/skiasharp.nativeassets.win32/2.88.3/skiasharp.nativeassets.win32.2.88.3.nupkg.sha512",
     "/home/santiago/.nuget/packages/stub.system.data.sqlite.core.netstandard/1.0.118/stub.system.data.sqlite.core.netstandard.1.0.118.nupkg.sha512",
+    "/home/santiago/.nuget/packages/system.componentmodel.annotations/4.5.0/system.componentmodel.annotations.4.5.0.nupkg.sha512",
     "/home/santiago/.nuget/packages/system.data.sqlite.core/1.0.118/system.data.sqlite.core.1.0.118.nupkg.sha512",
-    "/home/santiago/.nuget/packages/taglibsharp/2.3.0/taglibsharp.2.3.0.nupkg.sha512"
+    "/home/santiago/.nuget/packages/system.drawing.common/6.0.0/system.drawing.common.6.0.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/system.io.pipelines/6.0.0/system.io.pipelines.6.0.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/taglibsharp/2.3.0/taglibsharp.2.3.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/tmds.dbus.protocol/0.15.0/tmds.dbus.protocol.0.15.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Proyecto2 depends on Avalonia (>= 10.0.0) but Avalonia 10.0.0 was not found. An approximate best match of Avalonia 11.0.0 was resolved.",
+      "libraryId": "Avalonia",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Proyecto2 depends on Avalonia.Desktop (>= 10.0.0) but Avalonia.Desktop 10.0.0 was not found. An approximate best match of Avalonia.Desktop 11.0.0 was resolved.",
+      "libraryId": "Avalonia.Desktop",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
