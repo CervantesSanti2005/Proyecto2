@@ -6,6 +6,7 @@ namespace BDMusica{
     public partial class MainWindow : Window{
         public MainWindow(){
             InitializeComponent();
+            Console.WriteLine("Ventana MainWindow inicializada");
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e){

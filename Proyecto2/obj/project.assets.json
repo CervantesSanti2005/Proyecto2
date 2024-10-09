@@ -196,6 +196,22 @@
           }
         }
       },
+      "Avalonia.Themes.Fluent/11.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Avalonia.Themes.Fluent.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Avalonia.Themes.Fluent.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Avalonia.Win32/11.0.0": {
         "type": "package",
         "dependencies": {
@@ -895,6 +911,22 @@
         "lib/netstandard2.0/Avalonia.Skia.xml"
       ]
     },
+    "Avalonia.Themes.Fluent/11.0.0": {
+      "sha512": "xQVDcxwsozHk0U3crhHxSeXfB67NwfLKmnW6I498QLt614jzq08c+lLqrjlHM0QpAPVw6vJwSubEYroSOyyErA==",
+      "type": "package",
+      "path": "avalonia.themes.fluent/11.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "avalonia.themes.fluent.11.0.0.nupkg.sha512",
+        "avalonia.themes.fluent.nuspec",
+        "lib/net6.0/Avalonia.Themes.Fluent.dll",
+        "lib/net6.0/Avalonia.Themes.Fluent.xml",
+        "lib/netstandard2.0/Avalonia.Themes.Fluent.dll",
+        "lib/netstandard2.0/Avalonia.Themes.Fluent.xml"
+      ]
+    },
     "Avalonia.Win32/11.0.0": {
       "sha512": "eRhMVdR5KGMPw9mOaPutYF+v/ADoQzI6JEXmchbbEuQTFJ3cMZQgg2v/v9VERJze40Oazq05vdZQ0mFdGS9qgg==",
       "type": "package",
@@ -1572,8 +1604,9 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Avalonia >= 10.0.0",
-      "Avalonia.Desktop >= 10.0.0",
+      "Avalonia >= 11.0.0",
+      "Avalonia.Desktop >= 11.0.0",
+      "Avalonia.Themes.Fluent >= 11.0.0",
       "System.Data.SQLite.Core >= 1.0.118",
       "TagLibSharp >= 2.3.0"
     ]
@@ -1622,11 +1655,15 @@
         "dependencies": {
           "Avalonia": {
             "target": "Package",
-            "version": "[10.0.0, )"
+            "version": "[11.0.0, )"
           },
           "Avalonia.Desktop": {
             "target": "Package",
-            "version": "[10.0.0, )"
+            "version": "[11.0.0, )"
+          },
+          "Avalonia.Themes.Fluent": {
+            "target": "Package",
+            "version": "[11.0.0, )"
           },
           "System.Data.SQLite.Core": {
             "target": "Package",
@@ -1656,27 +1693,5 @@
         "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Proyecto2 depends on Avalonia (>= 10.0.0) but Avalonia 10.0.0 was not found. An approximate best match of Avalonia 11.0.0 was resolved.",
-      "libraryId": "Avalonia",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Proyecto2 depends on Avalonia.Desktop (>= 10.0.0) but Avalonia.Desktop 10.0.0 was not found. An approximate best match of Avalonia.Desktop 11.0.0 was resolved.",
-      "libraryId": "Avalonia.Desktop",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

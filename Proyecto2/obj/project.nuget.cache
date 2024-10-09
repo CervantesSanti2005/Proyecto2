@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QhpNoQl9CEk=",
+  "dgSpecHash": "sOx/BNbI65s=",
   "success": true,
   "projectFilePath": "/home/santiago/Desktop/MYD/Proyecto2/Proyecto2/Proyecto2.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "/home/santiago/.nuget/packages/avalonia.native/11.0.0/avalonia.native.11.0.0.nupkg.sha512",
     "/home/santiago/.nuget/packages/avalonia.remote.protocol/11.0.0/avalonia.remote.protocol.11.0.0.nupkg.sha512",
     "/home/santiago/.nuget/packages/avalonia.skia/11.0.0/avalonia.skia.11.0.0.nupkg.sha512",
+    "/home/santiago/.nuget/packages/avalonia.themes.fluent/11.0.0/avalonia.themes.fluent.11.0.0.nupkg.sha512",
     "/home/santiago/.nuget/packages/avalonia.win32/11.0.0/avalonia.win32.11.0.0.nupkg.sha512",
     "/home/santiago/.nuget/packages/avalonia.x11/11.0.0/avalonia.x11.11.0.0.nupkg.sha512",
     "/home/santiago/.nuget/packages/harfbuzzsharp/2.8.2.3/harfbuzzsharp.2.8.2.3.nupkg.sha512",
@@ -35,26 +36,5 @@
     "/home/santiago/.nuget/packages/taglibsharp/2.3.0/taglibsharp.2.3.0.nupkg.sha512",
     "/home/santiago/.nuget/packages/tmds.dbus.protocol/0.15.0/tmds.dbus.protocol.0.15.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Proyecto2 depends on Avalonia (>= 10.0.0) but Avalonia 10.0.0 was not found. An approximate best match of Avalonia 11.0.0 was resolved.",
-      "libraryId": "Avalonia",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Proyecto2 depends on Avalonia.Desktop (>= 10.0.0) but Avalonia.Desktop 10.0.0 was not found. An approximate best match of Avalonia.Desktop 11.0.0 was resolved.",
-      "libraryId": "Avalonia.Desktop",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

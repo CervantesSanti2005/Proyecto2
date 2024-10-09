@@ -8,10 +8,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Page Include="App.axaml">
+        <Generator>MSBuild:Compile</Generator>
+        <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.axaml">
+        <Generator>MSBuild:Compile</Generator>
+        <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.118" />
     <PackageReference Include="TagLibSharp" Version="2.3.0" />
-    <PackageReference Include="Avalonia" Version="10.0.0" />
-  <PackageReference Include="Avalonia.Desktop" Version="10.0.0" />
+    <PackageReference Include="Avalonia" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0" />
+
   </ItemGroup>
 
 </Project>
