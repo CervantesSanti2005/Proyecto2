@@ -8,7 +8,9 @@
         <TextBox Name="QueryTextBox" Height="30" Margin="10"/>
         <Button Name="SearchButton" Content="Buscar" Height="30" Margin="10" Click="SearchButton_Click"/>
 
-        <ListBox Name="ResultsListView" Margin="10" />
+        <ScrollViewer Height="400" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <ListBox Name="ResultsListView" Margin="10" />
+        </ScrollViewer>
 
         <TextBlock Text="Selecciona un directorio para minar:" Margin="10" />
         <TextBox Name="DirectoryTextBox" Height="30" Margin="10" Watermark="Ruta del directorio"/>
