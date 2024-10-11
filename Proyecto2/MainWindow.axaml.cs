@@ -64,7 +64,20 @@ namespace BDMusica{
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e){
-            // Lógica de búsqueda que puedes implementar aparte
+            string consulta = QueryTextBox.Text;
+
+            if(!string.IsNullOrEmpty(consulta)){
+                try{
+                    var busqueda = new Busqueda(db);
+                    List<string> resultaddosBusqueda = busqueda.Buscar(consulta);
+                    ResultsListView.ItemsSource = resultaddosBusqueda;
+                }catch{
+                MostrarMensaje($"Error durante la búsqueda");
+                Console.WriteLine($"Error en la búsqueda");
+                }
+            }else{
+                MostrarMensaje("Consulta invalida");
+            }
         }
     }
 }
