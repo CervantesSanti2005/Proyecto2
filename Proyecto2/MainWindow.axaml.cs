@@ -1,35 +1,70 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using System.Collections.Generic;
+using System;
+using System.Threading.Tasks;
 
 namespace BDMusica{
     public partial class MainWindow : Window{
+        private BaseDeDatos db;
+        private Minero minero;
+
         public MainWindow(){
             InitializeComponent();
-            Console.WriteLine("Ventana MainWindow inicializada");
-        }
 
-        private void SearchButton_Click(object sender, RoutedEventArgs e){
-            string consulta = QueryTextBox.Text;  // Recoge la entrada del usuario
+            try{
+                // Inicializar la base de datos y el minero
+                db = new BaseDeDatos();
+                db.Database("musica-db.db");
+                db.crearTabla();
+                db.insertarDefault();
+                minero = new Minero(db);
+            }catch (Exception ex){
 
-            if (!string.IsNullOrEmpty(consulta)){
-                // Llamar al método que busca canciones y asignar los resultados
-                var resultados = BuscarCanciones(consulta);
-
-                // Usar ItemsSource para actualizar los ítems del ListBox
-                ResultsListView.ItemsSource = resultados;
+                MostrarMensaje($"Error inicializando la base de datos o el minero: {ex.Message}");
             }
         }
 
-        // Este método devuelve una lista de canciones simulada
-        private List<string> BuscarCanciones(string consultaUsuario){
-            // Aquí iría la lógica de búsqueda real, por ahora simulamos con datos estáticos
-            var resultados = new List<string>{
-                "Canción 1 - Artista 1",
-                "Canción 2 - Artista 2"
-            };
+        private async void MineButton_Click(object sender, RoutedEventArgs e){
+            string directorio = DirectoryTextBox.Text;  // Obtener la ruta del directorio ingresado
 
-            return resultados;
+            if (!string.IsNullOrEmpty(directorio)){
+                try{
+                    // Confirmar si el directorio existe
+                    if (!System.IO.Directory.Exists(directorio)){
+                        MostrarMensaje("El directorio especificado no existe.");
+                        return;
+                    }
+                    List <string> resultadosMinado = null;
+
+                    await Task.Run(() => {
+                        try{
+                            resultadosMinado = minero.minarDirectorio(directorio);  // Minar archivos en el directorio
+                        }catch (Exception minarEx){
+                            MostrarMensaje($"Error durante el proceso de minado: {minarEx.Message}");
+                            Console.WriteLine($"Error durante el minado: {minarEx}");
+                        }
+                    });
+                    ResultsListView.ItemsSource = resultadosMinado;
+
+                    MostrarMensaje("El proceso de minado ha terminado exitosamente.");
+                }catch (Exception ex){
+                    MostrarMensaje($"Error general en el proceso de minado: {ex.Message}");
+                    Console.WriteLine($"Error general: {ex}");
+                }
+            }else{
+                MostrarMensaje("Por favor, ingrese una ruta de directorio válida.");
+            }
+        }
+
+        // Método auxiliar para mostrar mensajes en la interfaz
+        private void MostrarMensaje(string mensaje){
+            // Puedes tener un TextBlock en la interfaz para mostrar mensajes
+            // Si no tienes un TextBlock, puedes agregar uno
+            MensajeTextBlock.Text = mensaje;
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e){
+            // Lógica de búsqueda que puedes implementar aparte
         }
     }
 }

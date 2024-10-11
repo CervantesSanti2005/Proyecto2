@@ -1,11 +1,20 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="BDMusica.MainWindow"
-        Title="Music Search" Width="400" Height="400">
+        Title="Music App" Width="400" Height="600">
+
     <StackPanel>
         <TextBlock Text="Escribe tu búsqueda:" Margin="10" />
         <TextBox Name="QueryTextBox" Height="30" Margin="10"/>
         <Button Name="SearchButton" Content="Buscar" Height="30" Margin="10" Click="SearchButton_Click"/>
+
         <ListBox Name="ResultsListView" Margin="10" />
+
+        <TextBlock Text="Selecciona un directorio para minar:" Margin="10" />
+        <TextBox Name="DirectoryTextBox" Height="30" Margin="10" Watermark="Ruta del directorio"/>
+        <Button Name="MineButton" Content="Minar Archivos MP3" Height="30" Margin="10" Click="MineButton_Click"/>
+
+        <TextBlock Name="MensajeTextBlock" Text="" Foreground="Red" Margin="10"/>
     </StackPanel>
+
 </Window>

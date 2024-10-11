@@ -347,6 +347,18 @@
           }
         }
       },
+      "MessageBox.Avalonia/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "0.10.999-cibuild0012650-beta"
+        },
+        "compile": {
+          "lib/netstandard2.0/MessageBox.Avalonia.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MessageBox.Avalonia.dll": {}
+        }
+      },
       "MicroCom.Runtime/0.11.0": {
         "type": "package",
         "compile": {
@@ -1125,6 +1137,18 @@
         "runtimes/win-x86/native/libHarfBuzzSharp.dll"
       ]
     },
+    "MessageBox.Avalonia/1.0.0": {
+      "sha512": "8U6/L2BusejziuvTgmpnUoNv6hKDBTahLsM5NpCIYBhWuXibwqVmpsyw+qtTqm8G5GcYxL6xeVK7Hm9cbUvmBw==",
+      "type": "package",
+      "path": "messagebox.avalonia/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MessageBox.Avalonia.dll",
+        "messagebox.avalonia.1.0.0.nupkg.sha512",
+        "messagebox.avalonia.nuspec"
+      ]
+    },
     "MicroCom.Runtime/0.11.0": {
       "sha512": "MEnrZ3UIiH40hjzMDsxrTyi8dtqB5ziv3iBeeU4bXsL/7NLSal9F1lZKpK+tfBRnUoDSdtcW3KufE4yhATOMCA==",
       "type": "package",
@@ -1607,6 +1631,7 @@
       "Avalonia >= 11.0.0",
       "Avalonia.Desktop >= 11.0.0",
       "Avalonia.Themes.Fluent >= 11.0.0",
+      "MessageBox.Avalonia >= 1.0.0",
       "System.Data.SQLite.Core >= 1.0.118",
       "TagLibSharp >= 2.3.0"
     ]
@@ -1664,6 +1689,10 @@
           "Avalonia.Themes.Fluent": {
             "target": "Package",
             "version": "[11.0.0, )"
+          },
+          "MessageBox.Avalonia": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "System.Data.SQLite.Core": {
             "target": "Package",

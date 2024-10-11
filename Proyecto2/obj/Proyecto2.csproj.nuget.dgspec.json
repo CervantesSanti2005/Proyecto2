@@ -55,6 +55,10 @@
               "target": "Package",
               "version": "[11.0.0, )"
             },
+            "MessageBox.Avalonia": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "System.Data.SQLite.Core": {
               "target": "Package",
               "version": "[1.0.118, )"

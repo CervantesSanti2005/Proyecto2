@@ -11,16 +11,33 @@ namespace BDMusica{
             db = database;
         }
 
-        public void minarDirectorio(string directoryPath){
+        public List<string> minarDirectorio(string directoryPath){
+
+            List<string> cancionesMinadas = new List<string>();
+
+            if (!Directory.Exists(directoryPath)){
+                Console.WriteLine($"El directorio {directoryPath} no existe.");
+                return cancionesMinadas;
+            }
+
             var archivoMP3 = Directory.GetFiles(directoryPath, "*.mp3", SearchOption.AllDirectories);
 
+
             foreach(var archivo in archivoMP3){
-                minarArchivo(archivo);
+                string cancion = minarArchivo(archivo);
+                if (!string.IsNullOrEmpty(cancion)){
+                    cancionesMinadas.Add(cancion);
+                }
             }
+            return cancionesMinadas;
         }
 
-        private void minarArchivo(string filePath){
+        private string minarArchivo(string filePath){
             try{
+                    if (!System.IO.File.Exists(filePath)){
+                        Console.WriteLine($"El archivo {filePath} no existe.");
+                        return null;
+                    }
                     var archivo = TagLib.File.Create(filePath);
 
                     string title = archivo.Tag.Title ?? "Unkown";
@@ -34,8 +51,11 @@ namespace BDMusica{
                     int performerId = db.obtenerInsertarArtista(performer);
 
                     db.insertarCancion(performerId, albumId, filePath, title, track, year, genre);
+
+                     return $"{title} - {performer} ({album}, {year})";
             }catch (Exception ex){
                 Console.WriteLine($"Error procesando el archivo {filePath}: {ex.Message}");
+                return null;
             }
         }
 

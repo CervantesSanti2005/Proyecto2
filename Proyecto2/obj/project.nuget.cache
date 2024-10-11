@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sOx/BNbI65s=",
+  "dgSpecHash": "CzSNWWOh2Ig=",
   "success": true,
   "projectFilePath": "/home/santiago/Desktop/MYD/Proyecto2/Proyecto2/Proyecto2.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "/home/santiago/.nuget/packages/harfbuzzsharp.nativeassets.macos/2.8.2.3/harfbuzzsharp.nativeassets.macos.2.8.2.3.nupkg.sha512",
     "/home/santiago/.nuget/packages/harfbuzzsharp.nativeassets.webassembly/2.8.2.3/harfbuzzsharp.nativeassets.webassembly.2.8.2.3.nupkg.sha512",
     "/home/santiago/.nuget/packages/harfbuzzsharp.nativeassets.win32/2.8.2.3/harfbuzzsharp.nativeassets.win32.2.8.2.3.nupkg.sha512",
+    "/home/santiago/.nuget/packages/messagebox.avalonia/1.0.0/messagebox.avalonia.1.0.0.nupkg.sha512",
     "/home/santiago/.nuget/packages/microcom.runtime/0.11.0/microcom.runtime.0.11.0.nupkg.sha512",
     "/home/santiago/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "/home/santiago/.nuget/packages/skiasharp/2.88.3/skiasharp.2.88.3.nupkg.sha512",
