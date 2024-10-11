@@ -19,7 +19,7 @@ namespace BDMusica{
                 var filtros = queryUsuario.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 // seprar los filtros para recibir el formato
                 string sql = @"
-                        SELECT r.title, r.year, r.track, r.genre, p.name AS performer, a.name AS album
+                        SELECT DISTINCT r.title, r.year, r.track, r.genre, p.name AS performer, a.name AS album
                         FROM rolas r
                         JOIN performers p ON r.id_performer = p.id_performer
                         JOIN albums a ON r.id_album = a.id_album
@@ -40,7 +40,7 @@ namespace BDMusica{
                                 command.Parameters.AddWithValue("@titulo", "%" + valor + "%");
                                 break;
                             case "a" : //artista
-                                sql += "AND LOWER(p.name) LIKE @artista";
+                                sql += " AND LOWER(p.name) LIKE @artista";
                                 command.Parameters.AddWithValue("@artista", "%" + valor + "%");
                                 break;
 
@@ -57,7 +57,7 @@ namespace BDMusica{
                         }
                     }
                 }
-                command.CommandText = sql;
+                command.CommandText = sql.Trim();
                 command.Connection = db.connection;
 
 

@@ -68,9 +68,15 @@ namespace BDMusica{
 
             if(!string.IsNullOrEmpty(consulta)){
                 try{
+                    ResultsListView.ItemsSource = null;
                     var busqueda = new Busqueda(db);
-                    List<string> resultaddosBusqueda = busqueda.Buscar(consulta);
-                    ResultsListView.ItemsSource = resultaddosBusqueda;
+
+                    List<string> resultadosBusqueda = busqueda.Buscar(consulta);
+                    if(resultadosBusqueda.Count > 0){
+                        ResultsListView.ItemsSource = resultadosBusqueda;
+                    }else{
+                        MostrarMensaje("No se encontraron resultados");
+                    }
                 }catch{
                 MostrarMensaje($"Error durante la búsqueda");
                 Console.WriteLine($"Error en la búsqueda");
