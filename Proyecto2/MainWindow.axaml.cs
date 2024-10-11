@@ -56,10 +56,7 @@ namespace BDMusica{
             }
         }
 
-        // Método auxiliar para mostrar mensajes en la interfaz
         private void MostrarMensaje(string mensaje){
-            // Puedes tener un TextBlock en la interfaz para mostrar mensajes
-            // Si no tienes un TextBlock, puedes agregar uno
             MensajeTextBlock.Text = mensaje;
         }
 

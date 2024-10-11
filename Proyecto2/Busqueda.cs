@@ -17,7 +17,7 @@ namespace BDMusica{
 
             try{
                 var filtros = queryUsuario.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                // seprar los filtros para recibir el formato
+
                 string sql = @"
                         SELECT DISTINCT r.title, r.year, r.track, r.genre, p.name AS performer, a.name AS album
                         FROM rolas r
@@ -27,6 +27,7 @@ namespace BDMusica{
 
 
                 var command = new SQLiteCommand();
+                bool tieneFiltros = false;
                 foreach (var filtro in filtros){
                     var partes = filtro.Split(':');
                     if(partes.Length == 2){
@@ -38,25 +39,39 @@ namespace BDMusica{
                             case "t" : //titulo
                                 sql += " AND LOWER(r.title) LIKE @titulo";
                                 command.Parameters.AddWithValue("@titulo", "%" + valor + "%");
+                                tieneFiltros = true;
+
                                 break;
                             case "a" : //artista
                                 sql += " AND LOWER(p.name) LIKE @artista";
                                 command.Parameters.AddWithValue("@artista", "%" + valor + "%");
+                                tieneFiltros = true;
+
                                 break;
 
                             case "g" : //genero
                                 sql += " AND LOWER(r.genre) LIKE @genero";
                                 command.Parameters.AddWithValue("@genero", "%" + valor + "%");
+                                tieneFiltros = true;
                                 break;
                             case "y" ://año
                                 if(int.TryParse(valor, out int year)){
                                     sql += " AND r.year = @year";
                                     command.Parameters.AddWithValue("@year", year);
+                                    tieneFiltros = true;
                                 }
                                 break;
                         }
                     }
                 }
+
+                if(!tieneFiltros){
+                    listaResultados.Add("Ingresa un término de búsqueda válido.");
+                    return listaResultados;
+                }
+
+
+                sql += " ORDER BY r.title, p.name";
                 command.CommandText = sql.Trim();
                 command.Connection = db.connection;
 
@@ -66,7 +81,12 @@ namespace BDMusica{
                 using (var reader = command.ExecuteReader()){
                     while(reader.Read()){
 
+                    string titulo = reader["title"]?.ToString() ?? "Sin título";
+                    string artista = reader["performer"]?.ToString() ?? "Artista desconocido";
+                    string album = reader["album"]?.ToString() ?? "Álbum desconocido";
+                    string año = reader["year"]?.ToString() ?? "Año desconocido";
                     string resultado = $"{reader["title"]} - {reader["performer"]} ({reader["album"]}, {reader["year"]})";
+
                     listaResultados.Add(resultado);
                     }
                 }
